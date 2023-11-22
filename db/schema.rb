@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_22_223141) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_22_225856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_223141) do
     t.bigint "space_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "client_id", null: false
+    t.index ["client_id"], name: "index_reviews_on_client_id"
     t.index ["space_id"], name: "index_reviews_on_space_id"
   end
 
@@ -76,6 +78,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_223141) do
 
   add_foreign_key "bookings", "clients"
   add_foreign_key "bookings", "spaces"
+  add_foreign_key "reviews", "clients"
   add_foreign_key "reviews", "spaces"
   add_foreign_key "spaces", "admins"
 end
