@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_22_190321) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_22_195714) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,19 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_190321) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "status"
+    t.string "check_in"
+    t.string "check_out"
+    t.bigint "space_id", null: false
+    t.bigint "client_id", null: false
+    t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+    t.index ["space_id"], name: "index_bookings_on_space_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -51,5 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_190321) do
     t.index ["admin_id"], name: "index_spaces_on_admin_id"
   end
 
+  add_foreign_key "bookings", "clients"
+  add_foreign_key "bookings", "spaces"
   add_foreign_key "spaces", "admins"
 end
