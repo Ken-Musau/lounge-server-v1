@@ -5,13 +5,13 @@ class ClientsController < ApplicationController
   # GET /clients
   def index
     clients = Client.all
-    render json: clients, include: :reviews
+    render json: clients
   end
 
   # POST /clients
   def create
     client = Client.create!(client_params)
-    render json: client,include: :reviews, status: :created
+    render json: client, status: :created
   end
 
   # GET /clients/:id
