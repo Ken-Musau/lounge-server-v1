@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spaces
 
 
   resources :admins,  only: [:index]
