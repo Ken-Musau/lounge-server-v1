@@ -1,14 +1,16 @@
 class ClientsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   # GET /clients
   def index
-    render json: Client.all
+    client = Client.all
+    render json: client
   end
 
   # POST /clients
   def create
-    client = Client.create(client_params)
+    client = Client.create!(client_params)
     render json: client, status: :created
   end
 
@@ -22,12 +24,21 @@ class ClientsController < ApplicationController
 
   def update
     client = find_client
-    client.update(client_params)
+    client.update!(client_params)
     render json: client
+  end
+
+  # DELETE /clients/:id
+
+  def destroy
+    client = find_client
+    client.destroy
+    head :no_content
   end
 
   private
 
+  # Find client
   def find_client
     Client.find(params[:id])
   end
@@ -38,5 +49,9 @@ class ClientsController < ApplicationController
 
   def render_not_found
     render json: { error: "Client not found"}, status: :not_found
+  end
+
+  def render_unprocessable_entity_response(invalid)
+    render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
   end
 end
