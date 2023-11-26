@@ -15,9 +15,18 @@ class ClientsController < ApplicationController
   end
 
   # GET /clients/:id
+  # def show
+  #   client = find_client
+  #   render json: client
+  # end
+
   def show
-    client = find_client
-    render json: client
+    client = Client.find_by(id: session[:client_id])
+    if client
+      render json: client
+    else
+      render json:{error: "Not authorized"}, status: :unauthorized
+    end
   end
 
   # PATCH /clients/:id

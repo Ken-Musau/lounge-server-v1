@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get '/hello', to: 'application#hello_world'
 
-  # authentication
+  #client authentication and authorization
   post "/clientLogin", to: "client_sessions#create"
+  get "/loggedInClient", to: "clients#show"
+  delete "/clientLogout", to: "client_sessions#destroy"
 
   # Defines the root path route ("/")
   # root "posts#index"

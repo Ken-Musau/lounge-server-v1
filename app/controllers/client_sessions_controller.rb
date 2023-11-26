@@ -9,4 +9,9 @@ class ClientSessionsController < ApplicationController
       render json: {error: "invalid username or password"}, status: :unauthorized
     end
   end
+
+  def destroy
+    session.delete :client_id
+    head :no_content
+  end
 end
