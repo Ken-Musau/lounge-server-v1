@@ -53,7 +53,7 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:username, :first_name, :last_name, :profile_picture, :password_digest)
+    params.require(:client).permit(:username, :first_name, :last_name, :profile_picture, :password)
   end
 
   def render_not_found
