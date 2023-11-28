@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get '/hello', to: 'application#hello_world'
 
   #client authentication and authorization
-  post "/clientLogin", to: "client_sessions#create"
-  get "/loggedInClient", to: "clients#show"
-  delete "/clientLogout", to: "client_sessions#destroy"
+  post "/login", to: "client_sessions#create"
+  get "/theLoggedInClient", to: "clients#show"
+  delete "/logout", to: "client_sessions#destroy"
 
   # Defines the root path route ("/")
   # root "posts#index"

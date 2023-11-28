@@ -25,7 +25,7 @@ class ClientsController < ApplicationController
     if client
       render json: client
     else
-      render json:{error: "Not authorized"}, status: :unauthorized
+      render json:{error: ["Not authorized"]}, status: :unauthorized
     end
   end
 
