@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  skip_before_action :authorized, only: [:create]
 
   # GET /clients
   def index
@@ -9,16 +10,22 @@ class ClientsController < ApplicationController
   end
 
   # POST /clients
+  # def create
+  #   client = Client.create!(client_params)
+  #   render json: client, status: :created
+  # end
+
   def create
-    client = Client.create!(client_params)
-    render json: client, status: :created
+    @client = Client.create(client_params)
+    if @client.valid?
+      @token = encode_token(client_id: @client.id)
+      render json: @client, jwt: @token , status: :created
+    else
+      render json: { error: 'failed to create user' }, status: :unprocessable_entity
+    end
   end
 
-  # GET /clients/:id
-  # def show
-  #   client = find_client
-  #   render json: client
-  # end
+
 
   def show
     client = Client.find_by(id: session[:client_id])
