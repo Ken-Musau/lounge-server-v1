@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   # delete "/logout", to: "client_sessions#destroy"
 
   # JWT
-  post "/login", to: "clients#create"
+  post "/login", to: "auth#create"
+  get "/theLoggedInClient", to: "clients#profile"
 
   # Defines the root path route ("/")
   # root "posts#index"

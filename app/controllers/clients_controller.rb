@@ -25,6 +25,10 @@ class ClientsController < ApplicationController
   #   end
   # end
 
+  def profile
+    render json: current_user, status: :accepted
+  end
+
   def create
     @client = Client.create!(client_params)
     @token = encode_token(client_id: @client.id)
@@ -66,7 +70,7 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:username, :first_name, :last_name, :profile_picture, :password_digest)
+    params.permit(:username, :first_name, :last_name, :profile_picture, :password)
   end
 
   def render_not_found
