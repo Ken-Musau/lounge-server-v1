@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_22_225856) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_204131) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,19 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_225856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_spaces_on_admin_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "profile_picture"
+    t.string "password_digest"
+    t.string "role"
+    t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "bookings", "clients"
