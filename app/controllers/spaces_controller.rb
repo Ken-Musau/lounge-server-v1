@@ -38,7 +38,7 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:name, :location, :price, :status, :image, :description, :contact, :features, :admin_id)
+    params.permit(:name, :location, :price, :status, :image, :description, :contact, :features, :admin_id)
   end
 
   def render_not_found

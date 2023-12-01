@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :space
-  belongs_to :client
+  belongs_to :user
 end
