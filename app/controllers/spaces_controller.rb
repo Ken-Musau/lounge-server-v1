@@ -38,7 +38,7 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.permit(:name, :location, :price, :status, :image, :description, :contact, :features, :admin_id)
+    params.permit(:name, :location, :price, :status, :image, :description, :contact, :features, :user_id)
   end
 
   def render_not_found
@@ -50,7 +50,7 @@ class SpacesController < ApplicationController
   end
 
   def authorize
-    return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :client_id
+    return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :user_id
   end
 
 

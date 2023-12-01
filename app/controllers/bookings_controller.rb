@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permint(:status, :check_in, :check_out, :amount, :client_id, :space_id)
+    params.require(:booking).permint(:status, :check_in, :check_out, :amount, :user_id, :space_id)
   end
 
 

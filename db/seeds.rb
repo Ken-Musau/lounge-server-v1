@@ -10,35 +10,34 @@
 require 'faker'
 
 puts " Start Seeding ...🌱"
-Admin.create(username: "kenmusau", first_name: "kennedy",email: "kennedy@gmail.com", last_name: "musau", profile_picture: "https://i.pravatar.cc/48?u=499476", password: "123456")
 
 
-puts "Add clients..."
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499473", password: "123456")
+puts "Add Users..."
+User.create(role:"admin",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499473", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49942", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49942", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499426", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499426", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49926", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49926", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4976", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4976", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49476", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49476", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=99476", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=99476", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4499476", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4499476", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4599476", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4599476", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4996476", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4996476", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994276", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994276", password: "123456")
 
-Client.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994746", password: "123456")
+User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994746", password: "123456")
 puts " "
-puts  "adding clients complete."
+puts  "adding Users complete."
 puts " "
 
 puts "Add spaces..."
@@ -54,7 +53,7 @@ image_urls = ["https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixli
     image: image_urls.sample,
     description: Faker::Lorem.paragraph,
     contact: Faker::PhoneNumber.phone_number,
-    admin_id: rand(1..Admin.count)
+    user_id: User.first.id
   )
 end
 puts " "

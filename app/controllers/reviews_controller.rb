@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:username, :rating, :space_id, :client_id, :comment)
+    params.require(:review).permit(:username, :rating, :space_id, :user_id, :comment)
   end
 
   def render_not_found
