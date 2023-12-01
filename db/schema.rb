@@ -10,43 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_204131) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_01_190842) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.string "username"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "profile_picture"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
     t.string "check_in"
     t.string "check_out"
     t.bigint "space_id", null: false
-    t.bigint "client_id", null: false
     t.string "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_bookings_on_client_id"
+    t.bigint "user_id", null: false
     t.index ["space_id"], name: "index_bookings_on_space_id"
-  end
-
-  create_table "clients", force: :cascade do |t|
-    t.string "username"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "profile_picture"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -56,9 +34,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_204131) do
     t.bigint "space_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "client_id", null: false
-    t.index ["client_id"], name: "index_reviews_on_client_id"
+    t.bigint "user_id", null: false
     t.index ["space_id"], name: "index_reviews_on_space_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "spaces", force: :cascade do |t|
@@ -70,10 +48,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_204131) do
     t.string "description"
     t.string "contact"
     t.string "features"
-    t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_spaces_on_admin_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,9 +67,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_204131) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookings", "clients"
   add_foreign_key "bookings", "spaces"
-  add_foreign_key "reviews", "clients"
+  add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "spaces"
-  add_foreign_key "spaces", "admins"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "spaces", "users"
 end
