@@ -9,16 +9,14 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-  get '/hello', to: 'application#hello_world'
+  # get '/hello', to: 'application#hello_world'
 
-  #client authentication and authorization
-  # post "/login", to: "client_sessions#create"
-  # get "/theLoggedInClient", to: "clients#show"
-  # delete "/logout", to: "client_sessions#destroy"
+
 
   # JWT
-  post "/login", to: "auth#create"
-  get "/currentUser", to: "users#profile"
+  post "/login", to: "auth#login"
+  get "/currentUser", to: "users#me"
+  delete "/logout", to: "auth#logout"
 
   # Defines the root path route ("/")
   # root "posts#index"
