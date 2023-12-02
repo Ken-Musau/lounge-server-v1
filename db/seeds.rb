@@ -15,27 +15,27 @@ puts " Start Seeding ...🌱"
 puts "Add Users..."
 User.create(role:"admin",  username: 'admin', first_name: Faker::Name.first_name ,email: "adin@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499473", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49942", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49942", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499426", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499426", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49926", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49926", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4976", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4976", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49476", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49476", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=99476", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=99476", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4499476", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4499476", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4599476", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4599476", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4996476", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4996476", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994276", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994276", password: "123456")
 
-User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994746", password: "123456")
+User.create(username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=4994746", password: "123456")
 puts " "
 puts  "adding Users complete."
 puts " "
