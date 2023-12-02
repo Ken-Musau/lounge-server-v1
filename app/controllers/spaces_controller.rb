@@ -1,8 +1,8 @@
 class SpacesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-  before_action :authorize
-  # skip_before_action :authorize, only: [:index]
+  # before_action :authorize
+  skip_before_action :authorized, only: [:index]
 
   # GET /spaces
   def index
@@ -49,9 +49,9 @@ class SpacesController < ApplicationController
     render json: { errors: invalid.record.errors.full_messages  }, status: :unprocessable_entity
   end
 
-  def authorize
-    return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :user_id
-  end
+  # def authorize
+  #   return render json: { error: "Not Authorized" }, status: :unauthorized unless session.include? :user_id
+  # end
 
 
 end

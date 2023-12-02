@@ -13,7 +13,7 @@ puts " Start Seeding ...🌱"
 
 
 puts "Add Users..."
-User.create(role:"admin",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499473", password: "123456")
+User.create(role:"admin",  username: 'admin', first_name: Faker::Name.first_name ,email: "adin@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=499473", password: "123456")
 
 User.create(role:"client",  username: Faker::Internet.username, first_name: Faker::Name.first_name ,email: "client@gmail.com", last_name: Faker::Name.last_name , profile_picture: "https://i.pravatar.cc/48?u=49942", password: "123456")
 

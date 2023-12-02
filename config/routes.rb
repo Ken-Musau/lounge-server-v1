@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # JWT
   post "/login", to: "auth#create"
-  get "/theLoggedInClient", to: "clients#profile"
+  get "/currentUser", to: "users#profile"
 
   # Defines the root path route ("/")
   # root "posts#index"
