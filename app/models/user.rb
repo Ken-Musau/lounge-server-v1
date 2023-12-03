@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
+  # enum role: [:client, :admin], default: :client
   enum role: [:client, :admin]
   has_many :spaces, dependent: :destroy
   has_many :bookings, dependent: :destroy
